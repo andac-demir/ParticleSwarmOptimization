@@ -29,7 +29,7 @@ The parameters *w*, *phi_p* and *phi_g* are selected by the practitioner and con
 
 
 ## A Basic PSO Algorithm is Then:
-'
+
 **for** each particle *i* = 1, ..., *S* **do**:
     Initialize the particle's position with a uniformly distributed random vector:
     *x_i* ~ U(*b_low*, *b_up*)
@@ -54,7 +54,7 @@ The parameters *w*, *phi_p* and *phi_g* are selected by the practitioner and con
         *p_i* = *xi*
         **if** *f(p_i)* < *f(g)* **then**
             Update the swarm's best known position: *g* = *p_i*
-'
+
 
 ## Parameters:
 
@@ -65,7 +65,9 @@ These parameters can be tuned by **meta-optimization** (a concept known for usin
 *w*, *phi_p* and *phi_g* are the behavioral parameters that affect the performance of PSO. Meta-optimization is feasible for few behavioral parameters, but as the number of behavioral parameters  increases, the performance of meta-optimization is hugely disadvantaged by the **curse of dimensionality** (computation time increasing exponentially).
 
 *w* -> constant inertia weight (how much you weigh the particle's previous velocity)
+
 *phi_p* -> cognitive constant
+
 *phi_g* -> social constant
 
 
