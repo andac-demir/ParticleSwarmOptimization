@@ -17,7 +17,7 @@ Additionally, unlike classic optimization methods like **gradient descent** and 
 
 There is a cost function (*f*) which must be minimized and it takes as an argument a candidate solution (a particle) in the form of a vector of real numbers. The gradient of the cost function is not known.
 
-Let S be the number of particles in the swarm; each particle has a position *x_i* in the search space and a velocity *v_i*. *p_i* is the best known position of a particle *i* and *g* is the best known position of the entire swarm.
+Let S be the number of particles in the swarm; each particle has a position *x_i* in the search space and a velocity *v__i*. *p_i* is the best known position of a particle *i* and *g* is the best known position of the entire swarm.
 
 *b_up* and *b_low* are the upper and lower boundaries of the search space.
 
@@ -28,54 +28,31 @@ ii) a solution where the adequate objective function value is found.
 The parameters *w*, *phi_p* and *phi_g* are selected by the practitioner and control the behavior of the PSO method.
 
 
-## A basic PSO algorithm is then:
+## A Basic PSO Algorithm is Then:
 
 **for** each particle *i* = 1, ..., *S* **do**:
-
     Initialize the particle's position with a uniformly distributed random vector:
-
     *x_i* ~ U(*b_low*, *b_up*)
-
     Initialize the particle's best known position to its initial position:
-
     *p_i* = *x_i*
-
     **if** *f(p_i)* < *f(g)* **then**
-
         update the swarm's best known  position:
-
         *g* = *p_i*
-
     Initialize the particle's velocity:
-
     *v_i* ~ U(-|*b_up* - *b_low*|, |*b_up* - *b_low*|)
-
 **while** a termination criterion is not met **do**:
-
     **for** each particle *i* = 1, ..., *S* **do**:
-
         **for** each dimension *d* = 1, ..., *n* **do**:
-
         Pick random numbers:
-
         *rp*, *rg* ~ U(0,1)
-
         Update the particle's velocity:
-
         *vi,d* = *w* * *vi,d* + *phi_p* * *rp* (*p_i,d* - *x_i,d*) + *phi_g* * *rg* (*g_d* - *x_i,d*)
-
     Update the particle's position:
-
     *xi* = *xi* + *vi*
-
     **if** *f(x_i)* < *f(p_i)* **then**
-
         Update the particle's best known position:
-
         *p_i* = *xi*
-
         **if** *f(p_i)* < *f(g)* **then**
-
             Update the swarm's best known position: *g* = *p_i*
 
 
