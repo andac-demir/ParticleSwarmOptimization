@@ -29,7 +29,7 @@ The parameters *w*, *phi_p* and *phi_g* are selected by the practitioner and con
 
 
 ## A Basic PSO Algorithm is Then:
-'''python
+```
 **for** each particle *i* = 1, ..., *S* **do**:
     Initialize the particle's position with a uniformly distributed random vector:
     *x_i* ~ U(*b_low*, *b_up*)
@@ -54,7 +54,7 @@ while** a termination criterion is not met **do**:
         *p_i* = *xi*
         **if** *f(p_i)* < *f(g)* **then**
             Update the swarm's best known position: *g* = *p_i*
-'''
+```
 
 
 ## Parameters:
