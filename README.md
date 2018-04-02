@@ -1,4 +1,4 @@
-# ParticleSwarmOptimization
+# Particle Swarm Optimization
 
 PSO is a computational method that iteratively optimizes a problem by trying to improve a candidate solution
 with regard to a given measure of quality.
@@ -30,37 +30,31 @@ The parameters *w*, *phi_p* and *phi_g* are selected by the practitioner and con
 
 ## A basic PSO algorithm is then:
 
-for each particle *i* = 1, ..., *S* do:
+**for** each particle *i* = 1, ..., *S* **do**:
+    Initialize the particle's position with a uniformly distributed random vector:
+    *x_i* ~ U(*b_low*, *b_up*)
+    Initialize the particle's best known position to its initial position:
+    *p_i* = *x_i*
+    **if** *f(p_i)* < *f(g)* **then**
+        update the swarm's best known  position:
+        *g* = *p_i*
+    Initialize the particle's velocity:
+    *v_i* ~ U(-|*b_up* - *b_low*|, |*b_up* - *b_low*|)
 
-   Initialize the particle's position with a uniformly distributed random vector: *x_i* ~ U(*b_low*, *b_up*)
-
-   Initialize the particle's best known position to its initial position: *p_i* = *x_i*
-
-   if *f(p_i)* < *f(g)* then
-
-       update the swarm's best known  position: g = p_i
-
-   Initialize the particle's velocity: *v_i* ~ U(-|*b_up* - *b_low*|, |*b_up* - *b_low*|)
-
-while a termination criterion is not met do:
-
-   for each particle *i* = 1, ..., *S* do:
-
-      for each dimension *d* = 1, ..., n do:
-
-         Pick random numbers: rp, rg ~ U(0,1)
-
-         Update the particle's velocity: vi,d = w * vi,d + phi_p * rp (p_i,d - x_i,d) + phi_g * rg (g_d - x_i,d)
-
-      Update the particle's position: xi = xi + vi
-
-      if f(x_i) < f(p_i) then
-
-         Update the particle's best known position: pi = xi
-
-         if f(pi) < f(g) then
-
-            Update the swarm's best known position: g = pi
+**while** a termination criterion is not met **do**:
+    **for** each particle *i* = 1, ..., *S* **do**:
+        **for** each dimension *d* = 1, ..., *n* **do**:
+        Pick random numbers:
+        *rp*, *rg* ~ U(0,1)
+        Update the particle's velocity:
+        *vi,d* = *w* * *vi,d* + *phi_p* * *rp* (*p_i,d* - *x_i,d*) + *phi_g* * *rg* (*g_d* - *x_i,d*)
+    Update the particle's position:
+    *xi* = *xi* + *vi*
+    **if** *f(x_i)* < *f(p_i)* **then**
+        Update the particle's best known position:
+        *p_i* = *xi*
+        **if** *f(p_i)* < *f(g)* **then**
+            Update the swarm's best known position: *g* = *p_i*
 
 
 ## Parameters:
