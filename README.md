@@ -64,11 +64,11 @@ These parameters can be tuned by **meta-optimization** (a concept known for usin
 
 *w*, *phi_p* and *phi_g* are the behavioral parameters that affect the performance of PSO. Meta-optimization is feasible for few behavioral parameters, but as the number of behavioral parameters  increases, the performance of meta-optimization is hugely disadvantaged by the **curse of dimensionality** (computation time increasing exponentially).
 
-*w* -> constant inertia weight (how much you weigh the particle's previous velocity)
+*w*: constant inertia weight (how much you weigh the particle's previous velocity)
 
-*phi_p* -> cognitive constant
+*phi_p*: cognitive constant
 
-*phi_g* -> social constant
+*phi_g*: social constant
 
 
 ## The School of Thought:
@@ -80,8 +80,8 @@ That is PSO explores a broader region of the search-space, and exploits locally 
 One way to avoid premature convergence to a local optimum is:
 **Multi-swarm optimization**!
 
-**EXPLORATION** -> A diversification method that explores the broader search space and finds the best swarm position.
-**EXPLOITATION** -> Finding local optima in one swarm position.
+**Exploration** -> A diversification method that explores the broader search space and finds the best swarm position.
+**Exploitation** -> Finding local optima in one swarm position.
 
 
 ## Multi-Swarm Optimization:
