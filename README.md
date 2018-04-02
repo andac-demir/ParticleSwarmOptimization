@@ -30,30 +30,30 @@ The parameters *w*, *phi_p* and *phi_g* are selected by the practitioner and con
 
 ## A Basic PSO Algorithm is Then:
 
-**for** each particle *i* = 1, ..., *S* **do**: *same paragraph*
-    Initialize the particle's position with a uniformly distributed random vector: *same paragraph*
-    *x_i* ~ U(*b_low*, *b_up*) *same paragraph*
-    Initialize the particle's best known position to its initial position: *same paragraph*
-    *p_i* = *x_i* *same paragraph*
-    **if** *f(p_i)* < *f(g)* **then** *same paragraph*
-        update the swarm's best known  position: *same paragraph*
-        *g* = *p_i* *same paragraph*
-    Initialize the particle's velocity: *same paragraph*
-    *v_i* ~ U(-|*b_up* - *b_low*|, |*b_up* - *b_low*|) *same paragraph*
-**while** a termination criterion is not met **do**: *same paragraph*
-    **for** each particle *i* = 1, ..., *S* **do**: *same paragraph*
-        **for** each dimension *d* = 1, ..., *n* **do**: *same paragraph*
-        Pick random numbers: *same paragraph*
-        *rp*, *rg* ~ U(0,1) *same paragraph*
-        Update the particle's velocity: *same paragraph*
-        *vi,d* = *w* * *vi,d* + *phi_p* * *rp* (*p_i,d* - *x_i,d*) + *phi_g* * *rg* (*g_d* - *x_i,d*) *same paragraph*
-    Update the particle's position: *same paragraph*
-    *xi* = *xi* + *vi* *same paragraph*
-    **if** *f(x_i)* < *f(p_i)* **then** *same paragraph*
-        Update the particle's best known position: *same paragraph*
-        *p_i* = *xi* *same paragraph*
-        **if** *f(p_i)* < *f(g)* **then** *same paragraph*
-            Update the swarm's best known position: *g* = *p_i* *same paragraph*
+**for** each particle *i* = 1, ..., *S* **do**:
+    Initialize the particle's position with a uniformly distributed random vector:
+    *x_i* ~ U(*b_low*, *b_up*)
+    Initialize the particle's best known position to its initial position:
+    *p_i* = *x_i*
+    **if** *f(p_i)* < *f(g)* **then**
+        update the swarm's best known  position:
+        *g* = *p_i*
+    Initialize the particle's velocity:
+    *v_i* ~ U(-|*b_up* - *b_low*|, |*b_up* - *b_low*|)
+**while** a termination criterion is not met **do**:
+    **for** each particle *i* = 1, ..., *S* **do**:
+        **for** each dimension *d* = 1, ..., *n* **do**:
+        Pick random numbers:
+        *rp*, *rg* ~ U(0,1)
+        Update the particle's velocity:
+        *vi,d* = *w* * *vi,d* + *phi_p* * *rp* (*p_i,d* - *x_i,d*) + *phi_g* * *rg* (*g_d* - *x_i,d*)
+    Update the particle's position:
+    *xi* = *xi* + *vi*
+    **if** *f(x_i)* < *f(p_i)* **then**
+        Update the particle's best known position:
+        *p_i* = *xi*
+        **if** *f(p_i)* < *f(g)* **then**
+            Update the swarm's best known position: *g* = *p_i*
 
 
 ## Parameters:
